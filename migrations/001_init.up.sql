@@ -6,10 +6,15 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS tasks (
+CREATE TABLE tasks (
     id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
     title VARCHAR(255) NOT NULL,
     description TEXT,
-    created_at TIMESTAMP DEFAULT NOW(),
-    completed BOOLEAN DEFAULT FALSE
+    category VARCHAR(100),
+    priority INTEGER DEFAULT 1,
+    due_date TIMESTAMP,
+    completed BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    completed_at TIMESTAMP
 );
