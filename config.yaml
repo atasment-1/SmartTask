@@ -1,0 +1,13 @@
+server:
+  port: "8080"
+
+database:
+  host: "localhost"
+  port: "5432"
+  user: "todo_user"
+  password: "Apssa-1382"
+  name: "todo_analytics"
+  sslmode: "disable"
+
+auth:
+  secret_key: "your-secret-key-for-jwt"
